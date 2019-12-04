@@ -1,30 +1,33 @@
  
-Build docker:
+## 3 STEPS FOR BUILDING Text CLASSIFICATION
 
-    1)Open terminal and go to current working directory
+
+1) Build docker:
+
+    1.1)Open terminal and go to current working directory
     
-    2)RUN : docker build -t Ashu_bt_classification .
+    1.2)RUN : docker build -t Text_classification .
     
     
 
-#TRAINING
+2) TRAINING
 
-S-1)RUN : cd  Bt_classification_model/        (if you are not in this directory)
+ 2.1)RUN : cd  Classification_model/        (if you are not in this directory)
 
-S-2)RUN : docker run -i --rm -v `pwd`:/home:rw Ashu_bt_classification:latest python3 train.py
+ 2.2)RUN : docker run -i --rm -v `pwd`:/home:rw Text_classification:latest python3 train.py
 
 
 Note: Input data is in input folder and the format must me same as input.csv
 
 
 
-#INFERENCE
+3) INFERENCE
 
-S-1) RUN: docker run -it -p 8888:8888 third:latest
+3.1) RUN: docker run -it -p 8888:8888 third:latest
 
-S-2) RUN: jupyter notebook --ip=0.0.0.0 --port 8888 --no-browser --allow-root
+3.2) RUN: jupyter notebook --ip=0.0.0.0 --port 8888 --no-browser --allow-root
 
-s-3) RUN: inference.ipynb
+3.3) RUN: inference.ipynb
 
 
   
